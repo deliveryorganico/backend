@@ -5,51 +5,15 @@ from django.db import models
 
 # Create your models here.
 
-class Profile(AbstractUser):
-    ''' Foreign Keys '''
-    address = models.ForeignKey('Address')
-    favorite = models.ForeignKey('Favorite')
-
+class Product(models.Model):
     ''' Atributes '''
-    is_company = models.BooleanField(default=False)
-    photo = models.ImageField(null=True)
+    title=models.CharField(max_length=30)
+    description=models.CharField(max_length=70)
+    price=models.FloatField(validators=[MaxValueValidator(500000.0), MinValueValidator(0.0)])
 
     ''' Functions '''
     def __str__(self):
-        return '{}'.format(self.username)
-
-
-class Address(models.Model):
-    ''' Foreign Keys '''
-    city = models.ForeignKey('City')
-    locality = models.ForeignKey('Locality')
-
-    ''' Atributes '''
-    address = models.CharField(max_length=60)
-    alias = models.CharField(max_length=40)
-    floor = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(-50)], null=True)
-    phone = models.CharField(max_length=30)
-    st_number = models.IntegerField(validators=[MaxValueValidator(0), MinValueValidator(10000)])
-    zip_code = models.IntegerField(validators=[MaxValueValidator(0), MinValueValidator(10000)])
-
-    ''' Functions '''
-    def __str__(self):
-        return '{}'.format(self.alias)
-
-class City(models.Model):
-    ''' Foreign Keys '''
-    locality = models.ForeignKey('Locality')
-
-    ''' Atributes '''
-    CITIES=(
-        ('CBA', 'Cordoba'),
-        ('MDZ', 'Mendoza'),
-    )
-    city = models.CharField(max_length=3, choices=CITIES)
-
-    ''' Functions '''
-    def __str__(self):
-        return '{}'.format(self.city)
+        return '{}, {}'.format(self.title, self.price)
 
 class Locality(models.Model):
     ''' Atributes '''
@@ -63,10 +27,57 @@ class Locality(models.Model):
     def __str__(self):
         return '{}'.format(self.locality)
 
+
+class City(models.Model):
+    ''' Foreign Keys '''
+    locality = models.ForeignKey(Locality,on_delete=models.CASCADE, related_name='fk_localityCity')
+
+    ''' Atributes '''
+    CITIES=(
+        ('CBA', 'Cordoba'),
+        ('MDZ', 'Mendoza'),
+    )
+    city = models.CharField(max_length=3, choices=CITIES)
+
+    ''' Functions '''
+    def __str__(self):
+        return '{}'.format(self.city)
+
+
+class Address(models.Model):
+    ''' Foreign Keys '''
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='fk_cityAddress')
+    locality = models.ForeignKey(Locality, on_delete=models.CASCADE, related_name='fk_localityAddress')
+    ''' Atributes '''
+    address = models.CharField(max_length=60)
+    alias = models.CharField(max_length=40)
+    floor = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(-50)], null=True)
+    phone = models.CharField(max_length=30)
+    st_number = models.IntegerField(validators=[MaxValueValidator(10000), MinValueValidator(0)])
+    zip_code = models.IntegerField(validators=[MaxValueValidator(10000), MinValueValidator(0)])
+
+    ''' Functions '''
+    def __str__(self):
+        return '{}'.format(self.alias)
+
+class Branch(models.Model):
+    '''Foreign Keys'''
+    address=models.ForeignKey(Address, on_delete=models.CASCADE, related_name='fk_addressBranch')
+    product=models.ForeignKey(Product, on_delete=models.CASCADE, related_name='fk_productBranch')
+
+    '''Atributes'''
+    reputation=models.FloatField(validators=[MaxValueValidator(5.0), MinValueValidator(0.0)])
+    n_phone=models.CharField(max_length=30)
+    name=models.CharField(max_length=30)
+
+    '''Functions'''
+    def __str__(self):
+        return '{}, {}'.format(self.name, self.reputation)
+
 class Company(models.Model):
     ''' Foreign Keys '''
-    address=models.ForeignKey('Address')
-    branch=models.ForeignKey('Branch')
+    address=models.ForeignKey(Address, on_delete=models.CASCADE, related_name='fk_addressCompany')
+    branch=models.ForeignKey(Branch, on_delete=models.CASCADE, related_name='fk_branchCompany')
 
     '''Atributes'''
     name=models.CharField(max_length=30)
@@ -75,16 +86,22 @@ class Company(models.Model):
     def __str__(self):
         return '{}'.format(self.name)
 
-class Branch(models.Model):
-    '''Foreign Keys'''
-    address=models.ForeignKey('Address')
-    product=models.ForeignKey('Product')
+class Profile(AbstractUser):
+    ''' Foreign Keys '''
 
-    '''Atributes'''
-    reputation=models.FloatField(validators=[MaxValueValidator(0.0), MinValueValidator(5.0)])
-    n_phone=models.CharField(max_length=30)
-    name=models.CharField(max_length=30)
+    ''' Atributes '''
+    is_company = models.BooleanField(default=False, null=True)
+    photo = models.ImageField(null=True)
+
+    ''' Functions '''
+    def __str__(self):
+        return '{}'.format(self.username)
+
+class Favorite(models.Model):
+    ''' Foreign Keys '''
+    profile=models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='fk_profileFavorite')
+    branch=models.ForeignKey(Branch, on_delete=models.CASCADE, related_name='fk_branchFavorite')
 
     '''Functions'''
     def __str__(self):
-        return '{}, {}'.format(self.name, self.reputation)
+        return '{},{}'.format(self.profile, self.branch)
