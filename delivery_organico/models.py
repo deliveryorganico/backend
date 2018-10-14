@@ -21,7 +21,6 @@ class City(models.Model):
 
 class Locality(models.Model):
     ''' Foreign Keys '''
-    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='fk_cityLocality')
 
     ''' Atributes '''
     LOCALITIES=(
