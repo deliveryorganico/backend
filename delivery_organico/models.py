@@ -5,32 +5,8 @@ from django.db import models
 
 # Create your models here.
 
-class Product(models.Model):
-    ''' Atributes '''
-    title=models.CharField(max_length=30)
-    description=models.CharField(max_length=70)
-    price=models.FloatField(validators=[MaxValueValidator(500000.0), MinValueValidator(0.0)])
-
-    ''' Functions '''
-    def __str__(self):
-        return '{}, {}'.format(self.title, self.price)
-
-class Locality(models.Model):
-    ''' Atributes '''
-    LOCALITIES=(
-        ('CBA', 'Cordoba'),
-        ('MDZ', 'Mendoza'),
-    )
-    locality = models.CharField(max_length=3, choices=LOCALITIES)
-
-    ''' Functions '''
-    def __str__(self):
-        return '{}'.format(self.locality)
-
-
 class City(models.Model):
     ''' Foreign Keys '''
-    locality = models.ForeignKey(Locality,on_delete=models.CASCADE, related_name='fk_localityCity')
 
     ''' Atributes '''
     CITIES=(
@@ -42,6 +18,21 @@ class City(models.Model):
     ''' Functions '''
     def __str__(self):
         return '{}'.format(self.city)
+
+class Locality(models.Model):
+    ''' Foreign Keys '''
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='fk_cityLocality')
+
+    ''' Atributes '''
+    LOCALITIES=(
+        ('CBA', 'Cordoba'),
+        ('MDZ', 'Mendoza'),
+    )
+    locality = models.CharField(max_length=3, choices=LOCALITIES)
+
+    ''' Functions '''
+    def __str__(self):
+        return '{}'.format(self.locality)
 
 
 class Address(models.Model):
@@ -60,10 +51,22 @@ class Address(models.Model):
     def __str__(self):
         return '{}'.format(self.alias)
 
+class Company(models.Model):
+    ''' Foreign Keys '''
+    address=models.ForeignKey(Address, on_delete=models.CASCADE, related_name='fk_addressCompany')
+
+    '''Atributes'''
+    name=models.CharField(max_length=30)
+
+    '''Functions'''
+    def __str__(self):
+        return '{}'.format(self.name)
+
+
 class Branch(models.Model):
     '''Foreign Keys'''
     address=models.ForeignKey(Address, on_delete=models.CASCADE, related_name='fk_addressBranch')
-    product=models.ForeignKey(Product, on_delete=models.CASCADE, related_name='fk_productBranch')
+    company=models.ForeignKey(Company, on_delete=models.CASCADE, related_name='fk_companyBranch')
 
     '''Atributes'''
     reputation=models.FloatField(validators=[MaxValueValidator(5.0), MinValueValidator(0.0)])
@@ -74,17 +77,19 @@ class Branch(models.Model):
     def __str__(self):
         return '{}, {}'.format(self.name, self.reputation)
 
-class Company(models.Model):
-    ''' Foreign Keys '''
-    address=models.ForeignKey(Address, on_delete=models.CASCADE, related_name='fk_addressCompany')
-    branch=models.ForeignKey(Branch, on_delete=models.CASCADE, related_name='fk_branchCompany')
+class Product(models.Model):
+    '''Foreign Keys'''
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, related_name='fk_branchProduct')
 
-    '''Atributes'''
-    name=models.CharField(max_length=30)
+    ''' Atributes '''
+    title = models.CharField(max_length=30)
+    description = models.CharField(max_length=70)
+    price = models.FloatField(validators=[MaxValueValidator(500000.0), MinValueValidator(0.0)])
 
-    '''Functions'''
+    ''' Functions '''
+
     def __str__(self):
-        return '{}'.format(self.name)
+        return '{}, {}'.format(self.title, self.price)
 
 class Profile(AbstractUser):
     ''' Foreign Keys '''
