@@ -37,7 +37,7 @@ class Profile(AbstractUser):
     ''' Foreign Keys '''
 
     ''' Atributes '''
-    is_company = models.BooleanField(default=False, null=True)
+    is_company = models.BooleanField(default=False)
     photo = models.ImageField(null=True)
 
     ''' Functions '''
@@ -46,7 +46,6 @@ class Profile(AbstractUser):
 
 class Address(models.Model):
     ''' Foreign Keys '''
-    user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='fk_userAdress')
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='fk_cityAddress')
     locality = models.ForeignKey(Locality, on_delete=models.CASCADE, related_name='fk_localityAddress')
     ''' Atributes '''
