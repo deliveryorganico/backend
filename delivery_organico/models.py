@@ -39,8 +39,45 @@ class Profile(AbstractUser):
     photo = models.ImageField(null=True)
 
     ''' Functions '''
+    def set_vcards(self, vcards):
+        """
+        Expects a list of vcards like [{'type_of_card':'xxx', 'data':'xxx'},]
+        Deletes previous vcards, and sets the new ones.
+        """
+        self.vcards.all().delete()
+        for vcard in vcards:
+            new_vcard = VCard()
+            new_vcard.type_of_card = vcard['type_of_card']
+            new_vcard.data = vcard['data']
+            new_vcard.user = self
+            new_vcard.save()
+
+
     def __str__(self):
         return '{}'.format(self.username)
+
+class VCard(models.Model):
+    '''
+    Generic contact card.
+    '''
+    PHONE = 'phone'
+    EMAIL = 'email'
+    ADDRESS = 'address'
+    LINK = 'link'
+    TYPES_AVAILABLES=(
+        (EMAIL,'Email'),
+        (PHONE,'Teléfono'),
+        (ADDRESS,'Dirección'),
+        (LINK, 'Link'),
+    )
+
+    type_of_card = models.CharField("Tipo de dato",
+        choices=TYPES_AVAILABLES,
+        max_length=20)
+    data = models.CharField("Valor", max_length=128)
+    upload_date = models.DateTimeField('Last change', auto_now=True)
+    user = models.ForeignKey(Profile, related_name='vcards', null=True, blank=True, on_delete=models.CASCADE)
+
 
 class Address(models.Model):
     ''' Foreign Keys '''

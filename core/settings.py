@@ -12,7 +12,10 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import datetime
+<<<<<<< HEAD
 
+=======
+>>>>>>> auth con token añadido
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -111,8 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 JWT_AUTH = {
     'JWT_ALLOW_REFRESH': True,
-    'JWT_EXPIRATION_DELTA': 
-    .timedelta(hours=1),
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(hours=1),
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
 }
 
