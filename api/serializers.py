@@ -1,5 +1,7 @@
 from delivery_organico.models import *
 from rest_framework import serializers
+from rest_framework_jwt.settings import api_settings
+
 
 class CitySerializer(serializers.ModelSerializer):
     class Meta:
@@ -14,7 +16,7 @@ class LocalitySerializer(serializers.ModelSerializer):
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model=Profile
-        fields=('username','is_company',)
+        fields=('username','is_company', 'password')
 
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
@@ -40,3 +42,6 @@ class FavoriteSerializer(serializers.ModelSerializer):
     class Meta:
         model=Favorite
         fields=('profile','branch')
+
+
+
