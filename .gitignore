@@ -1,4 +1,7 @@
 *.pyc
 __pycache__/
 db.sqlite3
-*.jpg\n*.jpeg\n*.png\n*.gif\n
+*.jpg
+*.jpeg
+*.png
+*.gif

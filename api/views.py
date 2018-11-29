@@ -1,14 +1,9 @@
-from django.shortcuts import render
 from rest_framework import viewsets
 from delivery_organico.models import *
 from .serializers import *
 from rest_framework.decorators import action
-from django.shortcuts import render,redirect
-from django.http import HttpResponseRedirect
-from rest_framework import permissions, status
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework.views import APIView
+from django.shortcuts import redirect
+
 
 
 # Create your views here.
