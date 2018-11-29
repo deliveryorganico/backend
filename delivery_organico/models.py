@@ -8,11 +8,7 @@ class City(models.Model):
     ''' Foreign Keys '''
 
     ''' Atributes '''
-    CITIES = (
-        ('CBA', 'Cordoba'),
-        ('MDZ', 'Mendoza'),
-    )
-    city = models.CharField(max_length=3, choices=CITIES)
+    city = models.CharField('Ciudad',max_length=15)
 
     ''' Functions '''
     def __str__(self):
@@ -22,11 +18,7 @@ class Locality(models.Model):
     ''' Foreign Keys '''
 
     ''' Atributes '''
-    LOCALITIES = (
-        ('CBA', 'Cordoba'),
-        ('MDZ', 'Mendoza'),
-    )
-    locality = models.CharField(max_length=3, choices=LOCALITIES)
+    locality = models.CharField('Localidad',max_length=15)
 
     ''' Functions '''
     def __str__(self):
@@ -36,63 +28,31 @@ class Profile(AbstractUser):
     ''' Foreign Keys '''
 
     ''' Atributes '''
-    is_company = models.BooleanField(default=False)
-    photo = models.ImageField(null=True)
+    is_company = models.BooleanField('Compania', default=False)
+    photo = models.ImageField('Foto',null=True)
+    city = models.CharField('Ciudad', max_length=15)
+    locality = models.CharField('Localidad', max_length=15)
+    address = models.CharField('Direccion',max_length=60)
+    floor = models.IntegerField('Piso',validators=[MaxValueValidator(100), MinValueValidator(-50)], default=0)
+    phone = models.CharField('Telefono',max_length=30)
+    st_number = models.IntegerField('Altura',validators=[MaxValueValidator(10000), MinValueValidator(0)],default=0)
+    zip_code = models.IntegerField('Zip',validators=[MaxValueValidator(10000), MinValueValidator(0)], default=0)
 
     ''' Functions '''
-    def set_vcards(self, vcards):
-        """
-        Expects a list of vcards like [{'type_of_card':'xxx', 'data':'xxx'},]
-        Deletes previous vcards, and sets the new ones.
-        """
-        self.vcards.all().delete()
-        for vcard in vcards:
-            new_vcard = VCard()
-            new_vcard.type_of_card = vcard['type_of_card']
-            new_vcard.data = vcard['data']
-            new_vcard.user = self
-            new_vcard.save()
-
-
-    def __str__(self):
-        return '{}'.format(self.username)
-
-class VCard(models.Model):
-    '''
-    Generic contact card.
-    '''
-    PHONE = 'phone'
-    EMAIL = 'email'
-    ADDRESS = 'address'
-    LINK = 'link'
-    TYPES_AVAILABLES=(
-        (EMAIL,'Email'),
-        (PHONE,'Teléfono'),
-        (ADDRESS,'Dirección'),
-        (LINK, 'Link'),
-    )
-
-    type_of_card = models.CharField("Tipo de dato",
-        choices=TYPES_AVAILABLES,
-        max_length=20)
-    data = models.CharField("Valor", max_length=128)
-    upload_date = models.DateTimeField('Last change', auto_now=True)
-    user = models.ForeignKey(Profile, related_name='vcards', null=True, blank=True, on_delete=models.CASCADE)
 
 
 class Address(models.Model):
     ''' Foreign Keys '''
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='fk_cityAddress')
     locality = models.ForeignKey(Locality, on_delete=models.CASCADE, related_name='fk_localityAddress')
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='fk_profileAddress')
 
     ''' Atributes '''
-    address = models.CharField(max_length=60)
-    alias = models.CharField(max_length=40)
-    floor = models.IntegerField(validators=[MaxValueValidator(100), MinValueValidator(-50)], null=True)
-    phone = models.CharField(max_length=30)
-    st_number = models.IntegerField(validators=[MaxValueValidator(10000), MinValueValidator(0)])
-    zip_code = models.IntegerField(validators=[MaxValueValidator(10000), MinValueValidator(0)])
+    address = models.CharField('Direccion',max_length=60)
+    alias = models.CharField('Alias',max_length=40)
+    floor = models.IntegerField('Piso',validators=[MaxValueValidator(100), MinValueValidator(-50)],default=0)
+    phone = models.CharField('Telefono',max_length=30)
+    st_number = models.IntegerField('Altura',validators=[MaxValueValidator(10000), MinValueValidator(0)])
+    zip_code = models.IntegerField('Zip',validators=[MaxValueValidator(10000), MinValueValidator(0)])
 
     ''' Functions '''
     def __str__(self):
@@ -103,7 +63,7 @@ class Company(models.Model):
     address = models.ForeignKey(Address, on_delete=models.CASCADE, related_name='fk_addressCompany')
 
     '''Atributes'''
-    name = models.CharField(max_length=30)
+    name = models.CharField('Nombre',max_length=30)
 
     '''Functions'''
     def __str__(self):
@@ -115,9 +75,9 @@ class Branch(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='fk_companyBranch')
 
     '''Atributes'''
-    reputation = models.FloatField(validators=[MaxValueValidator(5.0), MinValueValidator(0.0)])
-    n_phone = models.CharField(max_length=30)
-    name = models.CharField(max_length=30)
+    reputation = models.FloatField('Reputuacion',validators=[MaxValueValidator(5.0), MinValueValidator(0.0)])
+    n_phone = models.CharField('Telefono',max_length=30)
+    name = models.CharField('Nombre',max_length=30)
 
     '''Functions'''
     def __str__(self):
@@ -128,9 +88,9 @@ class Product(models.Model):
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, related_name='fk_branchProduct')
 
     ''' Atributes '''
-    title = models.CharField(max_length=30)
-    description = models.CharField(max_length=70)
-    price = models.FloatField(validators=[MaxValueValidator(500000.0), MinValueValidator(0.0)])
+    title = models.CharField('Title',max_length=30)
+    description = models.CharField('Descripcion',max_length=70)
+    price = models.FloatField('Precio',validators=[MaxValueValidator(500000.0), MinValueValidator(0.0)])
 
     ''' Functions '''
 
