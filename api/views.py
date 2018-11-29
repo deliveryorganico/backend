@@ -6,7 +6,6 @@ from rest_framework.decorators import action
 from django.shortcuts import render,redirect
 
 # Create your views here.
-
 class CityViewSet(viewsets.ModelViewSet):
     queryset = City.objects.all()
     serializer_class = CitySerializer
