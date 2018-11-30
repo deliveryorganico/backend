@@ -29,7 +29,7 @@ class Profile(AbstractUser):
 
     ''' Atributes '''
     is_company = models.BooleanField('Compania', default=False)
-    photo = models.ImageField('Foto',null=True)
+    photo = models.ImageField('Foto',upload_to='img/',default='img/default.png',null=True)
     city = models.CharField('Ciudad', max_length=15)
     locality = models.CharField('Localidad', max_length=15)
     address = models.CharField('Direccion',max_length=60)
