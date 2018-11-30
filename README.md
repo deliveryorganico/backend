@@ -20,6 +20,7 @@ python3 manage.py runserver
 * Django
     * django-extensions
     * djangorestframework
+    * djangorestframework-jwt
 * Pillow
 * Pydotplus
 * Pyparsing
