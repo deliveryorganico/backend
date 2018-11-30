@@ -11,6 +11,7 @@ pip3 install -r requirements.txt
 
 ```shell
 python3 manage.py migrate
+python3 manage.py createsuperuser
 python3 manage.py runserver
 ```
 
@@ -18,6 +19,7 @@ python3 manage.py runserver
 * Django
     * django-extensions
     * djangorestframework
+    * djangorestframework-jwt
 * Pillow
 * Pydotplus
 * Pyparsing
