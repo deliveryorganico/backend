@@ -11,7 +11,7 @@ la direccion/ubicacion previamente establecida.
 Registro
 --------
 
-| Este paso es escencial para la utilizacion del sistema. Estea es la linea que separa a los desconocidos con los usuarios de la aplicacion. 
+| Este paso es escencial para el uso del sistema en si. Estea es la linea que separa a los desconocidos con los usuarios de la aplicacion. 
 | Se deben respeta una serie de paso para el registro y especificar:
 
 - Nombre de usuario - *username*
@@ -34,3 +34,40 @@ Registro
 - Numero de calle - *st_number*
 - Codigo postal - *zip_code*
 
+| Por ultimo una imagen para la cuenta
+
+- Imagen - *photo*
+
+Inicio de sesion
+----------------
+
+| Par poder iniciar sesion es escencial estar registrado previamente. El inicio de sesion permite utilizar las funciones de la aplicacion. Deberan acreditarse, lo usuarios compradores y/o vendedores de la misma manera.
+
+- Usuario - *username*
+- Contraseña - *password*
+
+Busqueda de productos
+---------------------
+
+| Los productos estan dispuestos de manera ordenada y practica. La barra de busqueda permite que encontrar productos especificos sea de mayor facilidad.
+  El producto tiene dos opciones de visuaizacion. La vista previa, con informacion resumida y la vista detallada donde ya se puede elegir si comprar el producto.
+
+Vista previa
+~~~~~~~~~~~~
+Se visualiza:
+
+- Imagen representativa
+- Nombre del producto
+- Boton de compra
+- Valoracion
+
+Vista detallada
+~~~~~~~~~~~~~~~
+Se visualiza:
+
+- Imagen de tamaño grande
+- Nombre del producto
+- Descripcion
+- Precio
+- Valoracion 
+- Informacion de la empresa
