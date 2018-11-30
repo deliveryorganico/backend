@@ -1,5 +1,2 @@
-help
-=====
-
-*Esta sistema informatico no esta preparado para ser intermediario en aspectos economicos, de pago, de quejas,
-problemas con el envio, calidad de los productos/empresa/compradores*
+Help
+====

@@ -19,6 +19,7 @@ Registro
 - Primer nombre - *first_name*
 - Apellido - *last_name*
 - Correo Electronico - *email*
+- Telefono - *phone*
 
 | Tipo de usuario:
 
@@ -26,5 +27,10 @@ Registro
 
 | Luego, el usuario, a través de Google Maps debera seleccionar la ubicacion donde se guardar los siguientes datos:
 
-- a
+- Ciudad - *city*
+- Localidad - *locality*
+- Calle - *address*
+- Piso - *floor*
+- Numero de calle - *st_number*
+- Codigo postal - *zip_code*
 
