@@ -34,7 +34,7 @@ class LocalitySerializer(serializers.ModelSerializer):
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model=Product
-        fields=('id', 'title', 'description', 'price', 'branch', 'photo')
+        fields=('id', 'title', 'description', 'price', 'branch', 'photo', 'created_at', 'updated_at')
 
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
