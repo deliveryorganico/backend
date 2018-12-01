@@ -5,42 +5,41 @@ from rest_framework import serializers
 class CitySerializer(serializers.ModelSerializer):
     class Meta:
         model=City
-        fields=('city',)
+        fields=('id','city',)
 
 class LocalitySerializer(serializers.ModelSerializer):
     class Meta:
         model=Locality
-        fields=('locality',)
+        fields=('id','locality',)
 
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model=Profile
-        fields=('username','is_company', 'password')
+        fields=('id','username','is_company', 'password')
 
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
         model=Address
-        fields=('alias','address','floor','phone','st_number','zip_code','city','locality')
+        fields=('id','alias','address','floor','phone','st_number','zip_code','city','locality')
 
 class CompanySerializer(serializers.ModelSerializer):
     class Meta:
         model=Company
-        fields=('name','address')
+        fields=('id','name','address')
 
 class BranchSerializer(serializers.ModelSerializer):
     class Meta:
         model=Branch
-        fields=('reputation','n_phone','name','address','company')
+        fields=('id','reputation','n_phone','name','address','company')
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model=Product
-        fields=('title','description','price','branch')
+        fields=('id','title','description','price','branch','photo')
 
 class FavoriteSerializer(serializers.ModelSerializer):
     class Meta:
         model=Favorite
-        fields=('profile','branch')
-
+        fields=('id','profile','branch')
 
 
