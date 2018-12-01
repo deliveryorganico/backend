@@ -41,9 +41,15 @@ class FavoriteSerializer(serializers.ModelSerializer):
     class Meta:
         model=Favorite
 <<<<<<< HEAD
+<<<<<<< HEAD
         fields=('profile','branch')
 =======
         fields=('id','profile','branch')
 
 
 >>>>>>> foto de producto agregada
+=======
+        fields=('id','profile','branch')
+
+
+>>>>>>> 1910b75fdae62ae130a2a482624d4f606ce11489

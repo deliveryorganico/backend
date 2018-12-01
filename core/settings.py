@@ -132,4 +132,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'delivery_organico/media')
 
 AUTH_USER_MODEL = 'delivery_organico.Profile'
+
 CORS_ORIGIN_ALLOW_ALL = True
