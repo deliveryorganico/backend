@@ -24,11 +24,11 @@ Tecnologias
    :maxdepth: 2
 
    vue
-
+   rest
 
 Avanzado 
 --------
 .. toctree::
    :maxdepth: 2
 
-   
+   serializer

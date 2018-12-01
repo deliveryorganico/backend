@@ -1,6 +1,5 @@
-Vue.js 
-======
-| *Front-End*
+Vue.js - Front-End
+==================
 | `Pagina oficial <https://vuejs.org/>`_
 
 | Vue.js es un framework progresivo de JavaScript para crear interfaces de usuario. 

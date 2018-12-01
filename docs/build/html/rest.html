@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>s &#8212; Delivery Organico 0.0.1 documentation</title>
+    <title>Django Rest - Back-End &#8212; Delivery Organico 0.0.1 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -15,7 +15,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Vue.js - Back-End" href="rest.html" />
+    <link rel="next" title="s" href="serializer.html" />
+    <link rel="prev" title="Vue.js - Front-End" href="vue.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -32,8 +33,45 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="s">
-<h1>s<a class="headerlink" href="#s" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="django-rest-back-end">
+<h1>Django Rest - Back-End<a class="headerlink" href="#django-rest-back-end" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://www.django-rest-framework.org/">Pagina oficial</a></div>
+</div>
+<div class="line-block">
+<div class="line">Django REST es un framework podersos y flexible con herramientas para la creacion
+APIs web.</div>
+<div class="line">Su funcion es de modelo de comunicación entre el frontend y el backend.</div>
+</div>
+<div class="line-block">
+<div class="line"><em>Lo importante es que el cliente no recibe HTML para renderizar, sino simplemente
+los datos que se han generado como respuesta. Es decir, el servidor no escribe
+HTML, sino únicamente genera los datos para enviarlos al cliente.</em></div>
+</div>
+<div class="section" id="que-es-rest">
+<h2>¿Que es REST?<a class="headerlink" href="#que-es-rest" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">REST deriva de “REpresentational State Transfer” (transferencia de representación
+de estado). Un servicio REST no tiene estado, el servicio pierde todos sus datos
+entre llamadas. Esto es, que no se puede llamar a un servicio REST y pasarle unos
+datos (p. ej. un usuario y una contraseña) y esperar que “nos recuerde” en la
+siguiente petición.</div>
+</div>
+<div class="line-block">
+<div class="line">De ahí el nombre: el estado lo mantiene el cliente y por lo tanto es el cliente
+quien debe pasar el estado en cada llamada. Si quiero que un servicio REST me
+recuerde, debo pasarle quien soy en cada llamada.</div>
+</div>
+</div>
+<div class="section" id="porque-lo-utilizamos">
+<h2>¿Porque lo utilizamos?<a class="headerlink" href="#porque-lo-utilizamos" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>Separación cliente/servidor e Independecia de tecnologias</strong></div>
+<div class="line">Estos se comunican con un lenguaje de intercambio (JSON,XML,…) y podemos hacer
+varios Front-End (Web, Mobile, etc) con un único Back-End. Todo reciben los
+datos de la misma manera y cada uno decide que hacer con ellos</div>
+</div>
+</div>
 </div>
 
 
@@ -62,19 +100,24 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="contenidos.html">Los primeros pasos en Delivery Organico</a></li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="vue.html">Vue.js - Front-End</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rest.html">Vue.js - Back-End</a></li>
-</ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vue.html">Vue.js - Front-End</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Django Rest - Back-End</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#que-es-rest">¿Que es REST?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#porque-lo-utilizamos">¿Porque lo utilizamos?</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="serializer.html">s</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="rest.html" title="previous chapter">Vue.js - Back-End</a></li>
+      <li>Previous: <a href="vue.html" title="previous chapter">Vue.js - Front-End</a></li>
+      <li>Next: <a href="serializer.html" title="next chapter">s</a></li>
   </ul></li>
 </ul>
 </div>
@@ -110,7 +153,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="_sources/serializer.rst.txt"
+      <a href="_sources/rest.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
