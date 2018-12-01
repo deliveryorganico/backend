@@ -2,17 +2,20 @@
 Los primeros pasos en Delivery Organico
 =======================================
 
-El usuario interesado en comprar productos se topa con este sistema de compras y lo primero que debe hacer es 
-registrarse en el sitio web o en la aplicacion movil. Una vez dentro, el usuario ahora es un posible candidato
-de compra y tiene las herramientas para indagar y buscar diferentes tipos de productos que se amolden a sus
-gustos. Cuando el usuario quiera un producto en disponibiidad, procedera a comprarlo y el producto llegara a 
-la direccion/ubicacion previamente establecida. 
+El usuario interesado en comprar productos se topa con este sistema de compras y
+lo primero que debe hacer es registrarse en el sitio web o en la aplicacion 
+movil. Una vez dentro, el usuario ahora es un posible candidato de compra y tiene
+las herramientas para indagar y buscar diferentes tipos de productos que se 
+amolden a sus gustos. Cuando el usuario quiera un producto en disponibiidad, 
+procedera a comprarlo y el producto llegara a la direccion/ubicacion previamente 
+establecida. 
 
 Registro
 --------
 
-Este paso es escencial para el uso del sistema en si. Estea es la linea que separa a los desconocidos con los usuarios de la aplicacion. 
-Se deben respeta una serie de paso para el registro y especificar:
+| Este paso es escencial para el uso del sistema en si. Estea es la linea que 
+  separa a los desconocidos con los usuarios de la aplicacion.
+| Se deben respeta una serie de paso para el registro y especificar:
 
 - Nombre de usuario - *username*
 - Contraseña de usuario - *password*
@@ -25,7 +28,8 @@ Se deben respeta una serie de paso para el registro y especificar:
 
 - ¿Es una compania? - *is_company*
 
-| Luego, el usuario, a través de Google Maps debera seleccionar la ubicacion donde se guardar los siguientes datos:
+| Luego, el usuario, a través de Google Maps debera seleccionar la ubicacion 
+  donde se guardar los siguientes datos:
 
 - Ciudad - *city*
 - Localidad - *locality*
@@ -41,7 +45,9 @@ Se deben respeta una serie de paso para el registro y especificar:
 Inicio de sesion
 ----------------
 
-Par poder iniciar sesion es escencial estar registrado previamente. El inicio de sesion permite utilizar las funciones de la aplicacion. Deberan acreditarse, lo usuarios compradores y/o vendedores de la misma manera.
+| Par poder iniciar sesion es escencial estar registrado previamente. El inicio 
+  de sesion permite utilizar las funciones de la aplicacion. Deberan acreditarse,
+  lo usuarios compradores y/o vendedores de la misma manera.
 
 - Usuario - *username*
 - Contraseña - *password*
@@ -49,9 +55,11 @@ Par poder iniciar sesion es escencial estar registrado previamente. El inicio de
 Filtro de productos
 -------------------
 
-Los productos estan dispuestos de manera ordenada y practica. La barra de busqueda permite que encontrar productos especificos sea de mayor facilidad.
-Los filtros por empresa, precio, puntuacion
-El producto tiene dos opciones de visuaizacion. La vista previa, con informacion resumida y la vista detallada donde ya se puede elegir si comprar el producto.
+| Los productos estan dispuestos de manera ordenada y practica. La barra de busqueda
+  permite que encontrar productos especificos sea de mas facil.
+| Los filtros por empresa, precio, puntuacion.
+| El producto tiene dos opciones de visuaizacion. La vista previa, con informacion 
+  resumida y la vista detallada donde ya se puede elegir si comprar el producto.
 
 Vista previa
 ~~~~~~~~~~~~
@@ -76,16 +84,19 @@ Se visualiza:
 Compra de productos
 -------------------
 
-Una vez que el producto se disponga en su vista detallada, la opcion de compra se muestra. Para comprar el producto se detalla la cantidad de los mismos.
-Se observa el precio por la cantidad y lo siguiente es acpetar la compra. El producto llegara a la ubicacion previamente establecida por el usuario en 
-la creacion de su cuenta.
+| Una vez que el producto se disponga en su vista detallada, la opcion de compra se 
+  muestra. Para comprar el producto se detalla la cantidad de los mismos.
+| Se observa el precio por la cantidad y lo siguiente es acpetar la compra. El 
+  producto llegara a la ubicacion previamente establecida por el usuario en la 
+  creacion de su cuenta.
 
 Creacion de productos
 ---------------------
 
-La creacion de productos esta disponible unicamente para las cuentas de tipo empresa. Solo se puede realizar la creacion de productos mediante web, no
-es posible a traves de la aplicacion movil. Se deben cumplir una serie de requisitos para la aprovacion de un producto y la puesta en funcionamiento
-en el sistema.
+| La creacion de productos esta disponible unicamente para las cuentas de tipo empresa. 
+  Solo se puede realizar la creacion de productos mediante web, no es posible a traves 
+  de la aplicacion movil. Se deben cumplir una serie de requisitos para la aprovacion 
+  de un producto y la puesta en funcionamiento en el sistema.
 
 Se especifica:
 
@@ -99,6 +110,8 @@ Al momento de crear el producto la puntuacion del mismo es 0(cero).
 Puntacion de productos
 ----------------------
 
-Los usuarios pueden calificar los productos. Esto beneficia a la comunidad, permitiendo conocer que productos son mas recomendables.
-La valoracion es numerica, del 1 al 5. Todos los usuarios pueden calificar productos, nadie queda exento de esta funcion.
+| Los usuarios pueden calificar los productos. Esto beneficia a la comunidad, permitiendo
+  conocer que productos son mas recomendables.
+| La valoracion es numerica, del 1 al 5. Todos los usuarios pueden calificar productos, 
+  nadie queda exento de esta funcion.
 

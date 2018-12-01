@@ -27,4 +27,5 @@ Django Rest - Back-End
 | **Separación cliente/servidor e Independecia de tecnologias**
 | Estos se comunican con un lenguaje de intercambio (JSON,XML,...) y podemos hacer 
   varios Front-End (Web, Mobile, etc) con un único Back-End. Todo reciben los
-  datos de la misma manera y cada uno decide que hacer con ellos
+  datos de la misma manera y cada uno decide que hacer con ellos.
+
