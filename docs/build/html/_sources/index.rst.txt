@@ -3,20 +3,24 @@ Delivery Organico - Documentacion
 
 Introduccion
 ------------
-
 .. toctree::
    :maxdepth: 2
 
    introduccion
    instalacion
+   license
 
 Recorrido Basico
 ----------------
-
 .. toctree::
    :maxdepth: 2
 
    contenidos
-   license
-   help
 
+
+Avanzado 
+--------
+.. toctree::
+   :maxdepth: 2
+
+   contenidos

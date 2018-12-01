@@ -1,6 +1,6 @@
-==================================================
-Empezando, los primeros pasos de Delivery Organico
-==================================================
+=======================================
+Los primeros pasos en Delivery Organico
+=======================================
 
 El usuario interesado en comprar productos se topa con este sistema de compras y lo primero que debe hacer es 
 registrarse en el sitio web o en la aplicacion movil. Una vez dentro, el usuario ahora es un posible candidato
@@ -11,8 +11,8 @@ la direccion/ubicacion previamente establecida.
 Registro
 --------
 
-| Este paso es escencial para el uso del sistema en si. Estea es la linea que separa a los desconocidos con los usuarios de la aplicacion. 
-| Se deben respeta una serie de paso para el registro y especificar:
+Este paso es escencial para el uso del sistema en si. Estea es la linea que separa a los desconocidos con los usuarios de la aplicacion. 
+Se deben respeta una serie de paso para el registro y especificar:
 
 - Nombre de usuario - *username*
 - Contraseña de usuario - *password*
@@ -41,16 +41,17 @@ Registro
 Inicio de sesion
 ----------------
 
-| Par poder iniciar sesion es escencial estar registrado previamente. El inicio de sesion permite utilizar las funciones de la aplicacion. Deberan acreditarse, lo usuarios compradores y/o vendedores de la misma manera.
+Par poder iniciar sesion es escencial estar registrado previamente. El inicio de sesion permite utilizar las funciones de la aplicacion. Deberan acreditarse, lo usuarios compradores y/o vendedores de la misma manera.
 
 - Usuario - *username*
 - Contraseña - *password*
 
-Busqueda de productos
----------------------
+Filtro de productos
+-------------------
 
-| Los productos estan dispuestos de manera ordenada y practica. La barra de busqueda permite que encontrar productos especificos sea de mayor facilidad.
-  El producto tiene dos opciones de visuaizacion. La vista previa, con informacion resumida y la vista detallada donde ya se puede elegir si comprar el producto.
+Los productos estan dispuestos de manera ordenada y practica. La barra de busqueda permite que encontrar productos especificos sea de mayor facilidad.
+Los filtros por empresa, precio, puntuacion
+El producto tiene dos opciones de visuaizacion. La vista previa, con informacion resumida y la vista detallada donde ya se puede elegir si comprar el producto.
 
 Vista previa
 ~~~~~~~~~~~~
@@ -59,7 +60,7 @@ Se visualiza:
 - Imagen representativa
 - Nombre del producto
 - Boton de compra
-- Valoracion
+- Puntacion
 
 Vista detallada
 ~~~~~~~~~~~~~~~
@@ -71,3 +72,33 @@ Se visualiza:
 - Precio
 - Valoracion 
 - Informacion de la empresa
+
+Compra de productos
+-------------------
+
+Una vez que el producto se disponga en su vista detallada, la opcion de compra se muestra. Para comprar el producto se detalla la cantidad de los mismos.
+Se observa el precio por la cantidad y lo siguiente es acpetar la compra. El producto llegara a la ubicacion previamente establecida por el usuario en 
+la creacion de su cuenta.
+
+Creacion de productos
+---------------------
+
+La creacion de productos esta disponible unicamente para las cuentas de tipo empresa. Solo se puede realizar la creacion de productos mediante web, no
+es posible a traves de la aplicacion movil. Se deben cumplir una serie de requisitos para la aprovacion de un producto y la puesta en funcionamiento
+en el sistema.
+
+Se especifica:
+
+- Titulo - *title*
+- Descripcion - *description*
+- Precio - *price*
+- Imagen - *product_img*
+
+Al momento de crear el producto la puntuacion del mismo es 0(cero).
+
+Puntacion de productos
+----------------------
+
+Los usuarios pueden calificar los productos. Esto beneficia a la comunidad, permitiendo conocer que productos son mas recomendables.
+La valoracion es numerica, del 1 al 5. Todos los usuarios pueden calificar productos, nadie queda exento de esta funcion.
+

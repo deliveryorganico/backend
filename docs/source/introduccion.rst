@@ -16,3 +16,15 @@ teoricos que nos puedan ser de utilidad el dia de mañana.
 La organizacion y distribucion de tareas fue una de las tareas mas
 complicadas, nuestra falta de experiencia estuvo muy ligado a esto.
 Supimos resolver conflictos internos que atrasavan el avance.
+
+Integrantes del proyecto
+------------------------
+Alumnos del Instituto Tecnico Salesiano Villada, cursando sexto año "C" de la especialidad Programacion.
+
+	- Barafani, Facundo
+	- Dubowez, Juan Cruz
+	- Gilardini, Benjamín
+	- Mare, Juan Cruz
+	- Nuñez, Ivan
+	- Olivari, Martín
+	- Vargas, Federico
