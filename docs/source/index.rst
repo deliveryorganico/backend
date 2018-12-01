@@ -22,11 +22,13 @@ Tecnologias
 
 .. toctree::
    :maxdepth: 2
+
    vue
+
 
 Avanzado 
 --------
 .. toctree::
    :maxdepth: 2
 
-   serializer
+   
