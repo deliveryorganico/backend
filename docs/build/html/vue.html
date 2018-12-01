@@ -34,7 +34,10 @@
             
   <div class="section" id="vue-js">
 <h1>Vue.js<a class="headerlink" href="#vue-js" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://vuejs.org/">Pagina oficial</a></p>
+<div class="line-block">
+<div class="line"><em>Front-End</em></div>
+<div class="line"><a class="reference external" href="https://vuejs.org/">Pagina oficial</a></div>
+</div>
 <div class="line-block">
 <div class="line">Vue.js es un framework progresivo de JavaScript para crear interfaces de usuario.
 Tiene un rendimiento y experiencia de desarrollo muy buena.</div>
@@ -44,6 +47,50 @@ Tiene un rendimiento y experiencia de desarrollo muy buena.</div>
 <div class="line">Vue te permite tomar una pagina web y dividirla en componentes reusables cada uno
 con su propio HTML, CSS y JavaScript necesarios para generar esa parte de la
 pagina.</div>
+</div>
+<div class="line-block">
+<div class="line">Hay varias formas de usar Vue.js, CLI, NPM o Script en HTML.</div>
+<div class="line">Nosotros elegimos llamándolo desde un &lt;script&gt; tag in un archivo HTML</div>
+</div>
+<div class="section" id="estructura">
+<h2>Estructura<a class="headerlink" href="#estructura" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">Los archivos .vue son interesantes, en ellos se observa una estrucutra de HTML con
+<em>&lt;tags&gt;</em> propios, <em>&lt;scripts&gt;</em> de JavaScript y &lt;style&gt; de CSS. Se lo conoce como un
+ componente de archivo simple (single-file component).</div>
+<div class="line">Usaremos el archivo Base.vue como ejemplo:</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">template</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">div</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;base&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">Toolbar</span><span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="n">Producto</span><span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="n">router</span><span class="o">-</span><span class="n">view</span><span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="n">Pie</span><span class="o">/&gt;</span>
+  <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">template</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+  <span class="kn">import</span> <span class="nn">Pie</span> <span class="kn">from</span> <span class="s1">&#39;./Base/Pie&#39;</span>
+  <span class="kn">import</span> <span class="nn">Toolbar</span> <span class="kn">from</span> <span class="s1">&#39;./Base/Toolbar&#39;</span>
+  <span class="kn">import</span> <span class="nn">Producto</span> <span class="kn">from</span> <span class="s1">&#39;./Formulario/Producto&#39;</span>
+  <span class="n">export</span> <span class="n">default</span> <span class="p">{</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;Base&#39;</span><span class="p">,</span>
+    <span class="n">components</span><span class="p">:</span> <span class="p">{</span>
+      <span class="n">Pie</span><span class="p">,</span>
+      <span class="n">Toolbar</span><span class="p">,</span>
+      <span class="n">Producto</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>En la sección &lt;template&gt; estamos definiendo el código HTML que queremos usar en nuestra página.</li>
+<li>En el código podemos ver un div con un id=”app”. En este div es donde vamos a ver todo el código que Vue JS va a generar.</li>
+<li>Cada &lt;tag&gt;, debajo de template, es un componente creado anteriormente.</li>
+<li>En &lt;script&gt; se importa los diferentes componentes.</li>
+<li>Cuando se exporta <em>default</em> son llamados los componentes que formaran parte de ‘Base’.</li>
+</ul>
 </div>
 </div>
 
@@ -74,7 +121,10 @@ pagina.</div>
 <li class="toctree-l1"><a class="reference internal" href="contenidos.html">Los primeros pasos en Delivery Organico</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Vue.js</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Vue.js</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#estructura">Estructura</a></li>
+</ul>
+</li>
 </ul>
 
 <div class="relations">
