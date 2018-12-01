@@ -1,0 +1,206 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>React Native - Mobile &#8212; Delivery Organico 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Django Rest - Back-End" href="rest.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="react-native-mobile">
+<h1>React Native - Mobile<a class="headerlink" href="#react-native-mobile" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://facebook.github.io/react-native/">Pagina oficial</a></div>
+</div>
+<div class="line-block">
+<div class="line">React Native es un framework desarrollado por Facebook que permite construir
+aplicaciones móviles usando JavaScript. React Native permite que JavaScript
+se ejecute e interactúe con los sistemas IOS y Android de la misma manera que
+lo hace el código nativo.</div>
+</div>
+<div class="line-block">
+<div class="line">La gran diferencia entre React Native y las WebApps, HTML5 App o aplicaciones
+hibridas es su rendimiento. Todas están escritas en JavaScript, al igual que
+React Native, pero no renderizan usando componentes nativos.</div>
+</div>
+<div class="line-block">
+<div class="line"><em>Crear aplicaciones nativas, nunca fue tan facil.</em></div>
+</div>
+<div class="section" id="jsx">
+<h2>JSX<a class="headerlink" href="#jsx" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">Una sintaxis para incrustar XML dentro de JavaScript. JSX te permite escribir tu
+lenguaje de marcado dentro del código. Se ve como HTML en la web, excepto que en
+lugar de cosas de la web como &lt;div&gt; o &lt;span&gt;, usas los componentes React.</div>
+</div>
+<div class="line-block">
+<div class="line">XML sirve para crear lenguaje propio en &lt;tags&gt; y con esto, JSX puede producir
+componentes de React.</div>
+</div>
+<p>Ejemplo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;View&gt;
+        &lt;Text&gt;Hello world!&lt;/Text&gt;
+&lt;/View&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="props">
+<h2>Props<a class="headerlink" href="#props" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">Muchos componenetes pueden ser customizados cuando son creados con diferentes
+parametros. Los <strong>props</strong> son estos parametros de creacion. Y estan sujetos
+al tiempo de vida del componente.</div>
+</div>
+<p>Ejemplo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">default</span> <span class="k">class</span> <span class="nc">Bananas</span> <span class="n">extends</span> <span class="n">Component</span> <span class="p">{</span>
+  <span class="n">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">let</span> <span class="n">pic</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">uri</span><span class="p">:</span> <span class="s1">&#39;https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg&#39;</span>
+    <span class="p">};</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="n">Image</span> <span class="n">source</span><span class="o">=</span><span class="p">{</span><span class="n">pic</span><span class="p">}</span> <span class="n">style</span><span class="o">=</span><span class="p">{{</span><span class="n">width</span><span class="p">:</span> <span class="mi">193</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mi">110</span><span class="p">}}</span><span class="o">/&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Aca el componente de React Native, <code class="docutils literal notranslate"><span class="pre">&lt;Image&gt;</span></code> tiene una prop llamada
+<code class="docutils literal notranslate"><span class="pre">source={}</span></code> que controla que imagen se va a mostrar en ese componente.</div>
+</div>
+<div class="line-block">
+<div class="line">Se pueden crear <code class="docutils literal notranslate"><span class="pre">props</span></code> para componentes propios. Permitiendonos usar los
+componentes ya creados en diferentes lugares de la app, con pocas diferencias
+en cada lugar.</div>
+</div>
+</div>
+<div class="section" id="states">
+<h2>States<a class="headerlink" href="#states" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">Los <code class="docutils literal notranslate"><span class="pre">states</span></code> controlan, al igual que los <code class="docutils literal notranslate"><span class="pre">props</span></code>, los componentes. Los
+states, son para datos que van a cambiar. Cuando se modifica, se
+re-renderiza solo.</div>
+</div>
+<div class="line-block">
+<div class="line">En general se inicia en el constructor y se llama a <code class="docutils literal notranslate"><span class="pre">setState</span></code> para
+cambiarlo.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">constructor</span><span class="p">(</span><span class="n">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">super</span><span class="p">(</span><span class="n">props</span><span class="p">);</span>
+  <span class="n">this</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="p">{</span> <span class="n">isShowingText</span><span class="p">:</span> <span class="n">true</span> <span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Delivery Organico</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introduccion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instalacion.html">Instalacion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html#contacto">Contacto</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contenidos.html">Los primeros pasos en Delivery Organico</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="vue.html">Vue.js - Front-End</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest.html">Django Rest - Back-End</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">React Native - Mobile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#jsx">JSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#props">Props</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#states">States</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="rest.html" title="previous chapter">Django Rest - Back-End</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Martin Olivari.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/react.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

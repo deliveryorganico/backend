@@ -25,3 +25,4 @@ Tecnologias
 
    vue
    rest
+   react
