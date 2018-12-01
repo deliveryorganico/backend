@@ -25,10 +25,3 @@ Tecnologias
 
    vue
    rest
-
-Avanzado 
---------
-.. toctree::
-   :maxdepth: 2
-
-   serializer

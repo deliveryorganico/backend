@@ -29,3 +29,22 @@ Django Rest - Back-End
   varios Front-End (Web, Mobile, etc) con un único Back-End. Todo reciben los
   datos de la misma manera y cada uno decide que hacer con ellos.
 
+Estructura basica
+-----------------
+
+| DRF se basa fundamentalmente en 3 componentes: los serializadores, las vistas y 
+  los routers.
+
+- | **Los serializadores:** Asociado a los modelos. Nos permiten definir al detalle 
+    cómo serán las respuestas que devolverá nuestro API y cómo procesaremos el 
+    contenido de las peticiones que nos lleguen.
+
+- | **Los routers:** son una herramienta que nos permiten definir las urls de nuestro
+    API de una manera sencilla y ordenada. Nos permiten definir qué método 
+    (GET, POST, PUT,...) se ejecutará al llegar una petición HTTP contra un path 
+    concreto.
+    
+- | **Las views:** Extensiones de las class-view de django. Sirva para simplificarnos 
+    la union de los routers, los serializadores y los modelos. Como respuesta 
+    devuelve json, xml, etc. 
+

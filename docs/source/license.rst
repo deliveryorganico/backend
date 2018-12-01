@@ -7,4 +7,4 @@ Sexto año del Instito Tecnico Salesiano Villada
 Contacto
 ========
 
-Preguntas? Abuso de admin? Llame al 911
+Preguntas? Bugs? Llame al Sanatorio Morra!

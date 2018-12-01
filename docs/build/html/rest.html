@@ -72,6 +72,34 @@ varios Front-End (Web, Mobile, etc) con un único Back-End. Todo reciben los
 datos de la misma manera y cada uno decide que hacer con ellos.</div>
 </div>
 </div>
+<div class="section" id="estructura-basica">
+<h2>Estructura basica<a class="headerlink" href="#estructura-basica" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">DRF se basa fundamentalmente en 3 componentes: los serializadores, las vistas y
+los routers.</div>
+</div>
+<ul>
+<li><div class="first line-block">
+<div class="line"><strong>Los serializadores:</strong> Asociado a los modelos. Nos permiten definir al detalle
+cómo serán las respuestas que devolverá nuestro API y cómo procesaremos el
+contenido de las peticiones que nos lleguen.</div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line"><strong>Los routers:</strong> son una herramienta que nos permiten definir las urls de nuestro
+API de una manera sencilla y ordenada. Nos permiten definir qué método
+(GET, POST, PUT,…) se ejecutará al llegar una petición HTTP contra un path
+concreto.</div>
+</div>
+</li>
+<li><div class="first line-block">
+<div class="line"><strong>Las views:</strong> Extensiones de las class-view de django. Sirva para simplificarnos
+la union de los routers, los serializadores y los modelos. Como respuesta
+devuelve json, xml, etc.</div>
+</div>
+</li>
+</ul>
+</div>
 </div>
 
 
@@ -105,6 +133,7 @@ datos de la misma manera y cada uno decide que hacer con ellos.</div>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Django Rest - Back-End</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#que-es-rest">¿Que es REST?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#porque-lo-utilizamos">¿Porque lo utilizamos?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#estructura-basica">Estructura basica</a></li>
 </ul>
 </li>
 </ul>
