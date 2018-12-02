@@ -1,5 +1,11 @@
-Delivery Organico - Documentacion
-=================================
+Documentacion de proyecto
+=========================
+
+|logoApp| Delivery Organico
+===========================
+
+.. |logoApp| image:: /_img/logoApp.jpeg
+   :scale: 15 %
 
 Introduccion
 ------------

@@ -28,6 +28,9 @@ version = u''
 # The full version, including alpha/beta/rc tags
 release = u'0.0.1'
 
+# -- User configuration ---------------------------------------------------
+
+html_scaled_image_link = False
 
 # -- General configuration ---------------------------------------------------
 
