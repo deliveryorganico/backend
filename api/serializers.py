@@ -58,4 +58,8 @@ class ProfileSerializer(serializers.ModelSerializer):
         model=Profile
         fields=('id', 'username', 'is_company', 'password')
 
-
+def jwt_response_payload_handler(token, user=None, request=None):
+    return {
+        'token': token,
+        'user': ProfileSerializer(user, context={'request': request}).data
+    }

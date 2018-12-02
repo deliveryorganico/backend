@@ -84,4 +84,3 @@ class FavoriteViewSet(viewsets.ModelViewSet):
         object=Favorite.objects.get(pk=pk)
         object.delete()
         return redirect("../../")
-
