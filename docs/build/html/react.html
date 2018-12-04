@@ -15,6 +15,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Avanzado" href="avanzado.html" />
     <link rel="prev" title="Django Rest - Back-End" href="rest.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -40,7 +41,7 @@
 <div class="line-block">
 <div class="line">React Native es un framework desarrollado por Facebook que permite construir
 aplicaciones móviles usando JavaScript. React Native permite que JavaScript
-se ejecute e interactúe con los sistemas IOS y Android de la misma manera que
+se ejecute e interactúe con los sistemas iOS y Android de la misma manera que
 lo hace el código nativo.</div>
 </div>
 <div class="line-block">
@@ -69,18 +70,38 @@ componentes de React.</div>
 </pre></div>
 </div>
 </div>
+<div class="section" id="components">
+<h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">Los componentes son los bloques de construcción de cualquier interfaz de usuario.
+React Native administra que de componentes, de JavaScript, a la Interfaz de
+Usuario nativa.</div>
+</div>
+<div class="line-block">
+<div class="line">La UI completa de la aplicacion se especifica mediante la declaracion de los
+componentes y en que orden se van a representar.</div>
+<div class="line">Los componentes están anidados dentro de otros componentes, formando una
+estructura en forma de ‘arbol’.</div>
+</div>
+<p>El componente de nivel superior se conoce como el <strong>componente raíz</strong>.
+Los componentes anidados se denominan <strong>componentes hijos</strong>.</p>
 <div class="section" id="props">
-<h2>Props<a class="headerlink" href="#props" title="Permalink to this headline">¶</a></h2>
+<h3>Props<a class="headerlink" href="#props" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line">Muchos componenetes pueden ser customizados cuando son creados con diferentes
 parametros. Los <strong>props</strong> son estos parametros de creacion. Y estan sujetos
 al tiempo de vida del componente.</div>
 </div>
+<div class="line-block">
+<div class="line">Se le pueden pasar las propiedades al <code class="docutils literal notranslate"><span class="pre">contructor</span></code>.</div>
+<div class="line">Un elemento padre puede alterar los accesorios de un elemento hijo en cualquier
+momento.</div>
+</div>
 <p>Ejemplo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">default</span> <span class="k">class</span> <span class="nc">Bananas</span> <span class="n">extends</span> <span class="n">Component</span> <span class="p">{</span>
   <span class="n">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">let</span> <span class="n">pic</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="n">uri</span><span class="p">:</span> <span class="s1">&#39;https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg&#39;</span>
+      <span class="n">uri</span><span class="p">:</span> <span class="s1">&#39;https://banana.com/galeria/Banana.jpg&#39;</span>
     <span class="p">};</span>
     <span class="k">return</span> <span class="p">(</span>
       <span class="o">&lt;</span><span class="n">Image</span> <span class="n">source</span><span class="o">=</span><span class="p">{</span><span class="n">pic</span><span class="p">}</span> <span class="n">style</span><span class="o">=</span><span class="p">{{</span><span class="n">width</span><span class="p">:</span> <span class="mi">193</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mi">110</span><span class="p">}}</span><span class="o">/&gt;</span>
@@ -100,7 +121,7 @@ en cada lugar.</div>
 </div>
 </div>
 <div class="section" id="states">
-<h2>States<a class="headerlink" href="#states" title="Permalink to this headline">¶</a></h2>
+<h3>States<a class="headerlink" href="#states" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line">Los <code class="docutils literal notranslate"><span class="pre">states</span></code> controlan, al igual que los <code class="docutils literal notranslate"><span class="pre">props</span></code>, los componentes. Los
 states, son para datos que van a cambiar. Cuando se modifica, se
@@ -114,6 +135,7 @@ cambiarlo.</div>
   <span class="nb">super</span><span class="p">(</span><span class="n">props</span><span class="p">);</span>
   <span class="n">this</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="p">{</span> <span class="n">isShowingText</span><span class="p">:</span> <span class="n">true</span> <span class="p">};</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -138,21 +160,26 @@ cambiarlo.</div>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduccion.html">Introduccion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="instalacion.html">Instalacion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html#contacto">Contacto</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="contenidos.html">Los primeros pasos en Delivery Organico</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glosario.html">Glosario</a></li>
 </ul>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="vue.html">Vue.js - Front-End</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rest.html">Django Rest - Back-End</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">React Native - Mobile</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#jsx">JSX</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#props">Props</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#states">States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#components">Components</a></li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="avanzado.html">Avanzado</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html#contacto">Contacto</a></li>
 </ul>
 
 <div class="relations">
@@ -160,6 +187,7 @@ cambiarlo.</div>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="rest.html" title="previous chapter">Django Rest - Back-End</a></li>
+      <li>Next: <a href="avanzado.html" title="next chapter">Avanzado</a></li>
   </ul></li>
 </ul>
 </div>

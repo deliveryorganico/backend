@@ -14,7 +14,7 @@ Introduccion
 
    introduccion
    instalacion
-   license
+   
 
 Recorrido Basico
 ----------------
@@ -22,6 +22,7 @@ Recorrido Basico
    :maxdepth: 2
 
    contenidos
+   glosario
 
 Tecnologias
 -----------
@@ -32,3 +33,19 @@ Tecnologias
    vue
    rest
    react
+
+Avanzado
+--------
+
+.. toctree::
+   :maxdepth: 2
+
+   avanzado
+
+Extra
+------
+
+.. toctree::
+   :maxdepth: 2
+
+   license

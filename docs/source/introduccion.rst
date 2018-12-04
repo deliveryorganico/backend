@@ -2,10 +2,15 @@
 Introduccion
 ============
 
+
 Delivery Organico es una herramienta para realizar compras de productos 
 organicos de manera comoda y sensilla. Los compradores adquieren 
 productos a diferentes empresas presentes en el sistema. 
 Vivir saludable, vivir mejor.
+
+.. |logoApp| image:: /_img/logoApp.jpeg
+	:scale: 15 %
+
 
 Un verdadero reto
 -----------------

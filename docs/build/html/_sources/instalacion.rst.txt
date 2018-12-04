@@ -1,4 +1,3 @@
-===========
 Instalacion
 ===========
 
@@ -25,7 +24,7 @@ Ejecutar::
     
     npm run serve
 
-Instalacion de Front-End
+Instalacion de Back-End
 ------------------------
 
 `Repositorio de Back End <https://github.com/deliveryorganico/backend>`_.
