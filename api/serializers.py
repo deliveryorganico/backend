@@ -56,7 +56,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model=Profile
-        fields=('id', 'username', 'is_company', 'password')
+        fields=('id', 'username', 'first_name', 'last_name',  'is_company', 'password', 'photo', 'city', 'locality', 'address', 'floor', 'phone', 'st_number', 'zip_code')
 
 def jwt_response_payload_handler(token, user=None, request=None):
     return {
