@@ -1,7 +1,3 @@
-========
-Avanzado
-========
-
 Autenticacion
 =============
 | Delivery Organico utiliza el estandar **JSON Web Token** (JWT). 
@@ -14,4 +10,28 @@ Autenticacion
   luego en cada petición el cliente envía este token que el servidor usa para 
   verificar que el usuario este correctamente autenticado y saber quien es.
 
- 
+AXIOS
+=====
+
+| Es una libreria que sirve para consumir APIs. Hace peticiones HTTP (GET, 
+  POST, DELETE,...), ya que React-Native por defecto no trae esta posibilidad.
+
+| Entonces, Axios hace peticiones a la API, la API, hace su trabajo con la 
+  Base de Datos e intenta cumplir con la peticion y envia una respuesta de 
+  regreso. 
+
+::
+
+    Axios.get(`http://192.168.0.106:8000/rest/product`)
+    .then(res =>  {
+        console.log(res);
+        this.setState({ products: res.data })
+    }).catch(error => {
+        console.log(error);
+    })
+
+- Peticion de tipo *GET*, a la API, a traves de la url ``http://192.x/rest/``.
+
+- ``.then`` para recibir la respuesta dentro de ``res`` y manejarla.
+
+- ``.catch``  para recibir cualquier error que surja.

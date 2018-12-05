@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Avanzado &mdash; Delivery Organico 0.0.1 documentation</title>
+  <title>Autenticacion &mdash; Delivery Organico 0.0.1 documentation</title>
   
 
   
@@ -98,10 +98,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Avanzado</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Avanzado</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#autenticacion">Autenticacion</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Autenticacion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#axios">AXIOS</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Extra</span></p>
 <ul>
@@ -151,7 +149,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Avanzado</li>
+      <li>Autenticacion</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,10 +168,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="avanzado">
-<h1>Avanzado<a class="headerlink" href="#avanzado" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="autenticacion">
-<h2>Autenticacion<a class="headerlink" href="#autenticacion" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="autenticacion">
+<h1>Autenticacion<a class="headerlink" href="#autenticacion" title="Permalink to this headline">¶</a></h1>
 <div class="line-block">
 <div class="line">Delivery Organico utiliza el estandar <strong>JSON Web Token</strong> (JWT).</div>
 </div>
@@ -188,6 +184,31 @@ luego en cada petición el cliente envía este token que el servidor usa para
 verificar que el usuario este correctamente autenticado y saber quien es.</div>
 </div>
 </div>
+<div class="section" id="axios">
+<h1>AXIOS<a class="headerlink" href="#axios" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">Es una libreria que sirve para consumir APIs. Hace peticiones HTTP (GET,
+POST, DELETE,…), ya que React-Native por defecto no trae esta posibilidad.</div>
+</div>
+<div class="line-block">
+<div class="line">Entonces, Axios hace peticiones a la API, la API, hace su trabajo con la
+Base de Datos e intenta cumplir con la peticion y envia una respuesta de
+regreso.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Axios.get(`http://192.168.0.106:8000/rest/product`)
+.then(res =&gt;  {
+    console.log(res);
+    this.setState({ products: res.data })
+}).catch(error =&gt; {
+    console.log(error);
+})
+</pre></div>
+</div>
+<ul class="simple">
+<li>Peticion de tipo <em>GET</em>, a la API, a traves de la url <code class="docutils literal notranslate"><span class="pre">http://192.x/rest/</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">.then</span></code> para recibir la respuesta dentro de <code class="docutils literal notranslate"><span class="pre">res</span></code> y manejarla.</li>
+<li><code class="docutils literal notranslate"><span class="pre">.catch</span></code>  para recibir cualquier error que surja.</li>
+</ul>
 </div>
 
 
