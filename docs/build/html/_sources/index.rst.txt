@@ -1,51 +1,37 @@
-Documentacion de proyecto
-=========================
+==================================
+Documentacion de Delivery Organico
+==================================
 
-|logoApp| Delivery Organico
-===========================
-
-.. |logoApp| image:: /_img/logoApp.jpeg
-   :scale: 15 %
-
-Introduccion
-------------
 .. toctree::
+   :caption: Introduccion
    :maxdepth: 2
 
    introduccion
    instalacion
    
-
-Recorrido Basico
-----------------
 .. toctree::
+   :caption: Recorrido Basico
    :maxdepth: 2
 
    contenidos
    glosario
 
-Tecnologias
------------
-
 .. toctree::
+   :caption: Tecnologias
    :maxdepth: 2
 
    vue
    rest
    react
 
-Avanzado
---------
-
 .. toctree::
+   :caption: Avanzado
    :maxdepth: 2
 
    avanzado
 
-Extra
-------
-
 .. toctree::
+   :caption: Extra
    :maxdepth: 2
 
    license
