@@ -96,7 +96,12 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Django Rest - Back-End</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#que-es-rest">¿Que es REST?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#porque-lo-utilizamos">¿Porque lo utilizamos?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#estructura-basica">Estructura basica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#estructura-basica">Estructura basica</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#los-serializadores">Los serializadores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#los-routers">Los routers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#las-views">Las views</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="react.html">React Native - Mobile</a></li>
@@ -108,7 +113,6 @@
 <p class="caption"><span class="caption-text">Extra</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html#contacto">Contacto</a></li>
 </ul>
 
             
@@ -218,27 +222,68 @@ datos de la misma manera y cada uno decide que hacer con ellos.</div>
 <div class="line">DRF se basa fundamentalmente en 3 componentes: los serializadores, las vistas y
 los routers.</div>
 </div>
-<ul>
-<li><div class="first line-block">
-<div class="line"><strong>Los serializadores:</strong> Asociado a los modelos. Nos permiten definir al detalle
+<div class="section" id="los-serializadores">
+<h3>Los serializadores<a class="headerlink" href="#los-serializadores" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Asociado a los modelos. Nos permiten definir al detalle
 cómo serán las respuestas que devolverá nuestro API y cómo procesaremos el
 contenido de las peticiones que nos lleguen.</div>
 </div>
-</li>
-<li><div class="first line-block">
-<div class="line"><strong>Los routers:</strong> son una herramienta que nos permiten definir las urls de nuestro
+<p>Los atributos, de la clase <code class="docutils literal notranslate"><span class="pre">AddressSerializer</span></code>, que estan en <code class="docutils literal notranslate"><span class="pre">fields=</span></code>
+son los elegidos que API puedo manejar:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">AddressSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">Address</span>
+    <span class="n">fields</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;alias&#39;</span><span class="p">,</span><span class="s1">&#39;address&#39;</span><span class="p">,</span><span class="s1">&#39;floor&#39;</span><span class="p">,</span><span class="s1">&#39;phone&#39;</span><span class="p">,</span><span class="s1">&#39;st_number&#39;</span><span class="p">,</span><span class="s1">&#39;zip_code&#39;</span><span class="p">,</span><span class="s1">&#39;city&#39;</span><span class="p">,</span><span class="s1">&#39;locality&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="los-routers">
+<h3>Los routers<a class="headerlink" href="#los-routers" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Son una herramienta que nos permiten definir las urls de nuestro
 API de una manera sencilla y ordenada. Nos permiten definir qué método
 (GET, POST, PUT,…) se ejecutará al llegar una petición HTTP contra un path
 concreto.</div>
 </div>
-</li>
-<li><div class="first line-block">
-<div class="line"><strong>Las views:</strong> Extensiones de las class-view de django. Sirva para simplificarnos
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">router</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;city&#39;</span><span class="p">,</span> <span class="n">CityViewSet</span><span class="p">,</span><span class="n">base_name</span><span class="o">=</span><span class="s2">&quot;city&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hace referencia a un <code class="docutils literal notranslate"><span class="pre">ViewSet</span></code>, para que se pueda acceder a el con una
+URL.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;http://127.0.0.1:8000/rest/city/&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="las-views">
+<h3>Las views<a class="headerlink" href="#las-views" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Extensiones de las class-view de django. Sirva para simplificarnos
 la union de los routers, los serializadores y los modelos. Como respuesta
 devuelve json, xml, etc.</div>
 </div>
-</li>
-</ul>
+<p>Ejemplo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ProductViewSet</span><span class="p">(</span><span class="n">viewsets</span><span class="o">.</span><span class="n">ModelViewSet</span><span class="p">):</span>
+    <span class="n">queryset</span> <span class="o">=</span> <span class="n">Product</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">ProductSerializer</span>
+
+    <span class="nd">@action</span><span class="p">(</span><span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span><span class="s1">&#39;DELETE&#39;</span><span class="p">],</span> <span class="n">detail</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">pk</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">object</span><span class="o">=</span><span class="n">Product</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span>
+        <span class="nb">object</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s2">&quot;../../&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ProductViewSet</span></code> relaciona todos los objetos de la clase <code class="docutils literal notranslate"><span class="pre">Product</span></code>
+en un queryset: <code class="docutils literal notranslate"><span class="pre">queryset</span> <span class="pre">=</span> <span class="pre">Product.objects.all()</span></code> y la serializacion de
+ese modelo <code class="docutils literal notranslate"><span class="pre">serializer_class</span> <span class="pre">=</span> <span class="pre">ProductSerializer</span></code> en un clase.</div>
+</div>
+<div class="line-block">
+<div class="line">La funcion <code class="docutils literal notranslate"><span class="pre">delete</span></code>, toda la Primary Key <code class="docutils literal notranslate"><span class="pre">pk</span></code> y la utiliza
+para borrar el objeto especifico de la base de datos, <code class="docutils literal notranslate"><span class="pre">object.delete()</span></code>.</div>
+</div>
+</div>
 </div>
 </div>
 

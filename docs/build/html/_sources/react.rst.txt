@@ -1,3 +1,4 @@
+=====================
 React Native - Mobile
 =====================
 
@@ -82,7 +83,6 @@ States
 | Los ``states`` controlan, al igual que los ``props``, los componentes. Los
   states, son para datos que van a cambiar. Cuando se modifica, se 
   re-renderiza solo.
-
 | En general se inicia en el constructor y se llama a ``setState`` para 
   cambiarlo.
 
@@ -92,3 +92,10 @@ States
     super(props);
     this.state = { isShowingText: true };
 
+
+setState()
+^^^^^^^^^^
+
+| Los componentes pueden actualizar su estado pasando un objeto al método 
+  ``this.setState ()``. Cualquier clave en el objeto pasado al método se 
+  fusionará (y anulará cualquier clave existente en) ``this.state``.

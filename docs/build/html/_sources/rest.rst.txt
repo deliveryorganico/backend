@@ -1,3 +1,4 @@
+======================
 Django Rest - Back-End
 ======================
 | `Pagina oficial <https://www.django-rest-framework.org/>`_
@@ -35,16 +36,60 @@ Estructura basica
 | DRF se basa fundamentalmente en 3 componentes: los serializadores, las vistas y 
   los routers.
 
-- | **Los serializadores:** Asociado a los modelos. Nos permiten definir al detalle 
-    cómo serán las respuestas que devolverá nuestro API y cómo procesaremos el 
-    contenido de las peticiones que nos lleguen.
+Los serializadores
+~~~~~~~~~~~~~~~~~~
+| Asociado a los modelos. Nos permiten definir al detalle 
+  cómo serán las respuestas que devolverá nuestro API y cómo procesaremos el 
+  contenido de las peticiones que nos lleguen.
 
-- | **Los routers:** son una herramienta que nos permiten definir las urls de nuestro
-    API de una manera sencilla y ordenada. Nos permiten definir qué método 
-    (GET, POST, PUT,...) se ejecutará al llegar una petición HTTP contra un path 
-    concreto.
+Los atributos, de la clase ``AddressSerializer``, que estan en ``fields=``
+son los elegidos que API puedo manejar::
+
+    class AddressSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Address
+        fields=('alias','address','floor','phone','st_number','zip_code','city','locality')
+
+Los routers
+~~~~~~~~~~~
+| Son una herramienta que nos permiten definir las urls de nuestro
+  API de una manera sencilla y ordenada. Nos permiten definir qué método 
+  (GET, POST, PUT,...) se ejecutará al llegar una petición HTTP contra un path 
+  concreto.
+
+::
+
+    router.register(r'city', CityViewSet,base_name="city")
+
+Hace referencia a un ``ViewSet``, para que se pueda acceder a el con una 
+URL.
+
+::
+
+    "city": "http://127.0.0.1:8000/rest/city/",
+
     
-- | **Las views:** Extensiones de las class-view de django. Sirva para simplificarnos 
-    la union de los routers, los serializadores y los modelos. Como respuesta 
-    devuelve json, xml, etc. 
+Las views
+~~~~~~~~~
+| Extensiones de las class-view de django. Sirva para simplificarnos 
+  la union de los routers, los serializadores y los modelos. Como respuesta 
+  devuelve json, xml, etc.
 
+Ejemplo::
+
+    class ProductViewSet(viewsets.ModelViewSet):
+        queryset = Product.objects.all()
+        serializer_class = ProductSerializer
+
+        @action(methods=['GET','DELETE'], detail=True)
+        def delete(self, request, pk, format=None):
+            object=Product.objects.get(pk=pk)
+            object.delete()
+            return redirect("../../")
+
+| ``ProductViewSet`` relaciona todos los objetos de la clase ``Product`` 
+  en un queryset: ``queryset = Product.objects.all()`` y la serializacion de
+  ese modelo ``serializer_class = ProductSerializer`` en un clase.
+
+| La funcion ``delete``, toda la Primary Key ``pk`` y la utiliza 
+  para borrar el objeto especifico de la base de datos, ``object.delete()``.

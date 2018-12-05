@@ -13,3 +13,5 @@ Autenticacion
   sesión al servidor, este genera el JWT y se lo manda a la aplicación cliente, 
   luego en cada petición el cliente envía este token que el servidor usa para 
   verificar que el usuario este correctamente autenticado y saber quien es.
+
+ 

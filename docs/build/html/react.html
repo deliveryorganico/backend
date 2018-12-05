@@ -98,7 +98,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#jsx">JSX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#components">Components</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#props">Props</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#states">States</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#states">States</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#setstate">setState()</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -111,7 +114,6 @@
 <p class="caption"><span class="caption-text">Extra</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html#contacto">Contacto</a></li>
 </ul>
 
             
@@ -269,8 +271,6 @@ en cada lugar.</div>
 <div class="line">Los <code class="docutils literal notranslate"><span class="pre">states</span></code> controlan, al igual que los <code class="docutils literal notranslate"><span class="pre">props</span></code>, los componentes. Los
 states, son para datos que van a cambiar. Cuando se modifica, se
 re-renderiza solo.</div>
-</div>
-<div class="line-block">
 <div class="line">En general se inicia en el constructor y se llama a <code class="docutils literal notranslate"><span class="pre">setState</span></code> para
 cambiarlo.</div>
 </div>
@@ -278,6 +278,14 @@ cambiarlo.</div>
   <span class="nb">super</span><span class="p">(</span><span class="n">props</span><span class="p">);</span>
   <span class="n">this</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="p">{</span> <span class="n">isShowingText</span><span class="p">:</span> <span class="n">true</span> <span class="p">};</span>
 </pre></div>
+</div>
+<div class="section" id="setstate">
+<h4>setState()<a class="headerlink" href="#setstate" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">Los componentes pueden actualizar su estado pasando un objeto al método
+<code class="docutils literal notranslate"><span class="pre">this.setState</span> <span class="pre">()</span></code>. Cualquier clave en el objeto pasado al método se
+fusionará (y anulará cualquier clave existente en) <code class="docutils literal notranslate"><span class="pre">this.state</span></code>.</div>
+</div>
 </div>
 </div>
 </div>
