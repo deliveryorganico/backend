@@ -4,8 +4,6 @@ from .serializers import *
 from rest_framework.decorators import action
 from django.shortcuts import redirect
 
-
-
 # Create your views here.
 
 class CityViewSet(viewsets.ModelViewSet):

@@ -9,3 +9,4 @@ PyJWT==1.6.4
 pyparsing==2.3.0
 pytz==2018.5
 six==1.11.0
+sphinx-rtd-theme==0.4.2
