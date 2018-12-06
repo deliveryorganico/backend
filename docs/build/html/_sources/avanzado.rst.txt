@@ -35,3 +35,7 @@ AXIOS
 - ``.then`` para recibir la respuesta dentro de ``res`` y manejarla.
 
 - ``.catch``  para recibir cualquier error que surja.
+
+REDUX
+=====
+

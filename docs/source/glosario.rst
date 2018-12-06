@@ -2,5 +2,6 @@
 Glosario 
 ========
 
-- Token
+- Token: 
+
 - JSON
