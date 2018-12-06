@@ -104,10 +104,8 @@ JWT_AUTH = {
     'JWT_ALLOW_REFRESH': True,
     'JWT_EXPIRATION_DELTA': datetime.timedelta(hours=1),
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'api.serializers.jwt_response_payload_handler',
 }
-
-
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
