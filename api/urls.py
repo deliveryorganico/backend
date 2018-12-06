@@ -1,8 +1,7 @@
+from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from django.conf.urls import url, include
-from .views import *
-from django.urls import path
 from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
+from .views import *
 
 router=DefaultRouter()
 router.register(r'address', AddressViewSet, base_name='address')
@@ -18,5 +17,4 @@ urlpatterns = [
     path('rest/', include(router.urls)),
     path('auth/obtain_token/', obtain_jwt_token),
     path('auth/refresh_token/', refresh_jwt_token),
-
 ]

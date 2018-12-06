@@ -1,16 +1,10 @@
 from django.shortcuts import redirect
-
-from delivery_organico.models import *
-from rest_framework import permissions, status
-from rest_framework import viewsets
-from rest_framework.decorators import action
-from rest_framework.decorators import api_view
+from rest_framework import permissions, status, viewsets
+from rest_framework.decorators import action, api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
+from delivery_organico.models import *
 from .serializers import *
-
-
 
 # Create your views here.
 class CityViewSet(viewsets.ModelViewSet):
@@ -23,7 +17,6 @@ class CityViewSet(viewsets.ModelViewSet):
         object.delete()
         return redirect("../../")
 
-
 class LocalityViewSet(viewsets.ModelViewSet):
     queryset = Locality.objects.all()
     serializer_class = LocalitySerializer
@@ -33,7 +26,6 @@ class LocalityViewSet(viewsets.ModelViewSet):
         object = Locality.objects.get(pk=pk)
         object.delete()
         return redirect("../../")
-
 
 class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
@@ -45,7 +37,6 @@ class ProfileViewSet(viewsets.ModelViewSet):
         object.delete()
         return redirect("../../")
 
-
 class AddressViewSet(viewsets.ModelViewSet):
     queryset = Address.objects.all()
     serializer_class = AddressSerializer
@@ -55,7 +46,6 @@ class AddressViewSet(viewsets.ModelViewSet):
         object = Address.objects.get(pk=pk)
         object.delete()
         return redirect("../../")
-
 
 class CompanyViewSet(viewsets.ModelViewSet):
     queryset = Company.objects.all()
@@ -67,7 +57,6 @@ class CompanyViewSet(viewsets.ModelViewSet):
         object.delete()
         return redirect("../../")
 
-
 class BranchViewSet(viewsets.ModelViewSet):
     queryset = Branch.objects.all()
     serializer_class = BranchSerializer
@@ -78,7 +67,6 @@ class BranchViewSet(viewsets.ModelViewSet):
         object.delete()
         return redirect("../../")
 
-
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
@@ -88,7 +76,6 @@ class ProductViewSet(viewsets.ModelViewSet):
         object = Product.objects.get(pk=pk)
         object.delete()
         return redirect("../../")
-
 
 class FavoriteViewSet(viewsets.ModelViewSet):
     queryset = Favorite.objects.all()

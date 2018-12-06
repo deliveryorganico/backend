@@ -81,7 +81,7 @@ class Product(models.Model):
     title = models.CharField('Title', max_length=30)
     description = models.CharField('Descripcion', max_length=70)
     price = models.FloatField('Precio', validators=[MaxValueValidator(500000.0), MinValueValidator(0.0)])
-    photo = models.ImageField('Foto', upload_to='img/', default='img/default_product.jpg',blank=True)
+    photo = models.ImageField('Foto', upload_to='img/', default='img/default_product.jpg', blank=True)
     created_at = models.DateTimeField('Fecha de creacion', auto_now_add=True)
     updated_at = models.DateTimeField('Ultima actualizacion', auto_now=True)
 
