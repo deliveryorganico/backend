@@ -57,9 +57,7 @@ Filtro de productos
 
 | Los productos estan dispuestos de manera ordenada y practica. La barra de busqueda
   permite que encontrar productos especificos sea de mas facil.
-| Los filtros por empresa, precio, puntuacion.
-| El producto tiene dos opciones de visuaizacion. La vista previa, con informacion 
-  resumida y la vista detallada donde ya se puede elegir si comprar el producto.
+| Los filtros por titulo. En un futuro proximo, por precio, empresa, etc.
 
 Vista previa
 ~~~~~~~~~~~~
@@ -84,11 +82,10 @@ Se visualiza:
 Compra de productos
 -------------------
 
-| Una vez que el producto se disponga en su vista detallada, la opcion de compra se 
-  muestra. Para comprar el producto se detalla la cantidad de los mismos.
-| Se observa el precio por la cantidad y lo siguiente es acpetar la compra. El 
-  producto llegara a la ubicacion previamente establecida por el usuario en la 
-  creacion de su cuenta.
+.. image:: _img/workinprogress.jpeg
+   :scale: 25 %
+   :alt: alternate text
+   :align: center
 
 Creacion de productos
 ---------------------
