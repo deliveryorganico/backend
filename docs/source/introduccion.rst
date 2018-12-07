@@ -26,6 +26,7 @@ Integrantes del proyecto
 ------------------------
 Alumnos del Instituto Tecnico Salesiano Villada, cursando sexto año "C" de la especialidad Programacion.
 
+	- Antonel, Gino
 	- Barafani, Facundo
 	- Dubowez, Juan Cruz
 	- Gilardini, Benjamín
