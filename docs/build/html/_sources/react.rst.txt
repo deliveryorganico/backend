@@ -92,7 +92,6 @@ States
     super(props);
     this.state = { isShowingText: true };
 
-
 setState()
 ^^^^^^^^^^
 

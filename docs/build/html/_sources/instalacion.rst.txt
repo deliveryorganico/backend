@@ -25,6 +25,8 @@ Ejecutar::
     
     npm run serve
 
+_____
+
 Instalacion de Back-End
 ------------------------
 
@@ -47,6 +49,8 @@ Ejecutar::
 
 	python3 manage.py runserver 0.0.0.0:8000
 
+_____
+
 Instalacion de Mobile
 ------------------------
 
@@ -58,9 +62,12 @@ Clonar el repositorio::
     
     git clone https://github.com/deliveryorganico/mobile.git
 
-Instalar los expo::
+Instalar los modulos necesarios y expo
+
+::
 	
-	npm install expo
+    npm install
+    npm install expo
 
 Ejecutar expo::
 	

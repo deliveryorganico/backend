@@ -10,6 +10,8 @@ Autenticacion
   luego en cada petición el cliente envía este token que el servidor usa para 
   verificar que el usuario este correctamente autenticado y saber quien es.
 
+_____
+
 AXIOS
 =====
 
@@ -36,6 +38,4 @@ AXIOS
 
 - ``.catch``  para recibir cualquier error que surja.
 
-REDUX
-=====
 
