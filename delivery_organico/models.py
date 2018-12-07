@@ -23,11 +23,11 @@ class Profile(AbstractUser):
     ''' Atributes '''
     is_company = models.BooleanField('Compania', default=False)
     photo = models.ImageField('Foto', upload_to='img/', default='img/default.png', null=True)
-    city = models.CharField('Ciudad', max_length=15)
-    locality = models.CharField('Localidad', max_length=15)
-    address = models.CharField('Direccion', max_length=60)
+    city = models.CharField('Ciudad', max_length=15, null=True)
+    locality = models.CharField('Localidad', max_length=15, null=True)
+    address = models.CharField('Direccion', max_length=60, null=True)
     floor = models.IntegerField('Piso', validators=[MaxValueValidator(100), MinValueValidator(-50)], default=0)
-    phone = models.CharField('Telefono', max_length=30)
+    phone = models.CharField('Telefono', max_length=30, null=True)
     st_number = models.IntegerField('Altura', validators=[MaxValueValidator(10000), MinValueValidator(0)], default=0)
     zip_code = models.IntegerField('Zip', validators=[MaxValueValidator(10000), MinValueValidator(0)], default=0)
 

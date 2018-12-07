@@ -1,15 +1,11 @@
 from django.shortcuts import redirect
 
 from delivery_organico.models import *
-from rest_framework import permissions, status
+from rest_framework import filters
 from rest_framework import viewsets
 from rest_framework.decorators import action
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework.views import APIView
 
 from .serializers import *
-
 
 
 # Create your views here.
@@ -82,6 +78,8 @@ class BranchViewSet(viewsets.ModelViewSet):
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('^title',)
 
     @action(methods=['GET', 'DELETE'], detail=True)
     def delete(self, request, pk, format=None):
