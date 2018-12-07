@@ -107,6 +107,11 @@ Al momento de crear el producto la puntuacion del mismo es 0(cero).
 Puntacion de productos
 ----------------------
 
+.. image:: _img/workinprogress.jpeg
+   :scale: 25 %
+   :alt: alternate text
+   :align: left
+
 | Los usuarios pueden calificar los productos. Esto beneficia a la comunidad, permitiendo
   conocer que productos son mas recomendables.
 | La valoracion es numerica, del 1 al 5. Todos los usuarios pueden calificar productos, 
